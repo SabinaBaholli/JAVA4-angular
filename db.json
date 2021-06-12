@@ -1,0 +1,8 @@
+{
+    "items": [
+      { "id": 1, "name": "SDA", "description": "typicode" }
+    ],
+    "users": [
+      { "id": 1, "name": "some comment", "age": 1 }
+    ]
+  }

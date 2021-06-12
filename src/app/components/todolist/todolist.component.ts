@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToDoItem } from 'src/app/models/ToDoItem.model';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'app-todolist',
@@ -9,17 +10,8 @@ import { ToDoItem } from 'src/app/models/ToDoItem.model';
 export class TodolistComponent implements OnInit {
   itemName: string = '';
   itemDescription: string = '';
-  toDoItems: Array<ToDoItem> = [
-    {
-      name: 'Study',
-      description: 'test',
-    },
-    {
-      name: 'Sleep',
-      description: 'test'
-    }
-  ]
-  constructor() { }
+  toDoItems: Array<ToDoItem> = [];
+  constructor(private beService: BackendService) { }
 
   addItem() {
     this.toDoItems.push({
@@ -32,6 +24,10 @@ export class TodolistComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.beService.getItems().subscribe((response) => {
+      console.log(response)
+      this.toDoItems = response;
+    });
   }
 
 }

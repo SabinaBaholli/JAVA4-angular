@@ -1,5 +1,5 @@
 export interface ToDoItem {
-    id?: number;
+    id?: number,
     name: string,
     description: string,
     time?: Date
