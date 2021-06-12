@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BackendService } from './services/backend.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,13 @@ import { BackendService } from './services/backend.service';
 })
 export class AppComponent {
   title = 'demo';
-  constructor(public beService: BackendService) { 
+  constructor(public beService: BackendService,
+    private router: Router) { 
 
+  }
+
+  logOut() {
+    this.beService.isLoggedIn = false;
+    this.router.navigate(['']);
   }
 }

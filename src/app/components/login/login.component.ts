@@ -9,6 +9,7 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit, OnDestroy {
   time: any;
+  errorMessage: string = '';
   constructor(
     private beService: BackendService,
     private router: Router
@@ -22,8 +23,16 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   onAddForm(param: any) {
     const user = param.form.value;
-    this.beService.isLoggedIn = true;
-    this.router.navigate(['/home']);
+    // check if user exists in db
+    this.beService.getUsers().subscribe((users) => {
+      this.beService.isLoggedIn = !!users.filter((u) => u.email === user.email && u.password === user.password).length;
+      if ( this.beService.isLoggedIn) {
+        this.router.navigate(['/home']);
+      } else {
+        this.errorMessage = 'Wrong credentials!'
+      }
+    })
+
   }
 
   ngOnDestroy() {

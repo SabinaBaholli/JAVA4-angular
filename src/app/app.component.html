@@ -1,4 +1,4 @@
-<!-- <button [routerLink]="['/home']">Go to Home</button> -->
+<button *ngIf="beService.isLoggedIn" (click)="logOut()"> Log Out</button>
 
 <app-login *ngIf="!beService.isLoggedIn"></app-login>
 

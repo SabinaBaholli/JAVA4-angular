@@ -33,13 +33,23 @@ export class BackendService {
   }
 /*  --------------------------------------------------------------  */  
 
-/*  --------------------CRUD ITEMS -------------------------------  */  
+/*  --------------------CRUD USERS -------------------------------  */  
 
   getUsers(): Observable<Array<UserModel>> {
     return this.http.get<Array<UserModel>>(this.url + '/users ');
   }
 
-  //todo add DELETE, POST, PUT
+  deleteUser(id: number) {
+    return this.http.delete<Array<UserModel>>(this.url + '/users/' + id);
+  }
+
+  addUser(user: UserModel) {
+    return this.http.post<Array<UserModel>>(this.url + '/users', user);
+  }
+
+  updateUser(id: number, user: UserModel) {
+    return this.http.put<Array<ToDoItem>>(this.url + '/users/' + id, user);
+  }
 
   /*  --------------------------------------------------------------  */  
 

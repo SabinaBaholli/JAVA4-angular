@@ -1,20 +1,22 @@
 {
   "items": [
     {
-      "id": 1,
-      "name": "My new item",
-      "description": "Desc"
-    },
-    {
       "name": "sfsdaf",
       "description": "sadffas",
       "id": 2
+    },
+    {
+      "name": "asfsa",
+      "description": "sadfsadf",
+      "id": 3
     }
   ],
   "users": [
     {
       "id": 1,
-      "name": "some comment",
+      "name": "Admin User",
+      "email": "admin@test.com",
+      "password": "123",
       "age": 1
     }
   ]
