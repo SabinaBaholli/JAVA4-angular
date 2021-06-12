@@ -1,6 +1,6 @@
 <button [routerLink]="['/home']">Go to Home</button>
 
-<app-login></app-login>
+<app-login *ngIf="!beService.isLoggedIn"></app-login>
 
 <router-outlet></router-outlet>
   

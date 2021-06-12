@@ -10,6 +10,11 @@ export class TodoitemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.item)
+  }
+
+  deleteItem(item: any) {
+    console.log(item)
   }
 
 }

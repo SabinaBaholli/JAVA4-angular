@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   onAddForm(param: any) {
     const user = param.form.value;
+    this.beService.isLoggedIn = true;
     this.router.navigate(['/home']);
   }
 

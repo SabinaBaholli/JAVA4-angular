@@ -2,5 +2,12 @@
     <app-todoitem [item]="item"></app-todoitem>
 </div>
 
+<div>
+    <h2>Add item</h2>
+    <input [(ngModel)]="itemName" placeholder="Item name">
+    <input [(ngModel)]="itemDescription" placeholder="Item description">
+    <button (click)="addItem()">Add item</button>
+</div>
+
 
 <!-- TODO add input to add item -->
