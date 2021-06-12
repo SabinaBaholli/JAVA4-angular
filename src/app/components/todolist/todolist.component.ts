@@ -10,13 +10,15 @@ import { BackendService } from 'src/app/services/backend.service';
 export class TodolistComponent implements OnInit {
   itemName: string = '';
   itemDescription: string = '';
-  toDoItems: Array<ToDoItem> = [];
-  constructor(private beService: BackendService) { }
+  constructor(public beService: BackendService) { }
 
   addItem() {
-    this.toDoItems.push({
+    const item = {
       name: this.itemName,
       description: this.itemDescription
+    }
+    this.beService.addItem(item).subscribe(() => {
+      this.beService.toDoItems.push(item)
     })
     // clear the form
     this.itemName  = ''
@@ -26,7 +28,7 @@ export class TodolistComponent implements OnInit {
   ngOnInit(): void {
     this.beService.getItems().subscribe((response) => {
       console.log(response)
-      this.toDoItems = response;
+      this.beService.toDoItems = response;
     });
   }
 

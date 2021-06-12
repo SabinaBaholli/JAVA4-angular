@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'app-todoitem',
@@ -7,14 +8,24 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TodoitemComponent implements OnInit {
   @Input() item: any;
-  constructor() { }
+  constructor(private beService: BackendService) { }
 
   ngOnInit(): void {
     console.log(this.item)
   }
 
+  getItems() {
+    this.beService.getItems().subscribe((response) => {
+      this.beService.toDoItems = response;
+    })
+  }
+
   deleteItem(item: any) {
-    console.log(item)
+    const id = item.id;
+    this.beService.deleteItem(id).subscribe((res)=> {
+      this.getItems();
+    });
+  
   }
 
 }
