@@ -1,14 +1,14 @@
 {
   "items": [
     {
-      "name": "sfsdaf",
-      "description": "sadffas",
-      "id": 2
-    },
-    {
-      "name": "asfsa",
+      "name": "Item 2",
       "description": "sadfsadf",
       "id": 3
+    },
+    {
+      "name": "My item",
+      "description": "description",
+      "id": 4
     }
   ],
   "users": [
@@ -16,6 +16,13 @@
       "id": 1,
       "name": "Admin User",
       "email": "admin@test.com",
+      "password": "123",
+      "age": 1
+    },
+    {
+      "id": 1,
+      "name": "Guest User",
+      "email": "guest@test.com",
       "password": "123",
       "age": 1
     }

@@ -1,7 +1,7 @@
-<div *ngIf="beService.isLoggedIn()">
-    <button (click)="logOut()">Log Out</button>
-    <button [routerLink]="['/home']">Home</button>
-    <button [routerLink]="['/users']">Users</button>
+<div class="navbar" *ngIf="beService.isLoggedIn()">
+    <a [routerLink]="['/home']">Home</a>
+    <a [routerLink]="['/users']">Users</a>
+    <a (click)="logOut()">Log Out</a>
 </div>
 <app-login *ngIf="!beService.isLoggedIn()"></app-login>
 

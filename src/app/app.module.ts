@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuardService } from './auth-guard.service';
 import {MatCardModule} from '@angular/material/card';
 import { UsersComponent } from './components/users/users.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { UsersComponent } from './components/users/users.component';
     HttpClientModule,
     MatSidenavModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent]
