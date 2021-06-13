@@ -9,13 +9,16 @@ import {Router} from '@angular/router';
 })
 export class AppComponent {
   title = 'demo';
+  showFiller = false;
+
   constructor(public beService: BackendService,
     private router: Router) { 
-
   }
 
   logOut() {
-    this.beService.isLoggedIn = false;
-    this.router.navigate(['']);
+    localStorage.setItem('isLoggedIn', 'false');
+    this.router.navigate(['/']);
   }
 }
+
+

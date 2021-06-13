@@ -10,9 +10,13 @@ import { UserModel } from '../models/User.model';
 export class BackendService {
 
   private url = 'http://localhost:3000';
+
   toDoItems: Array<ToDoItem> = [];
-  public isLoggedIn = false;
   constructor(private http: HttpClient) { }
+
+  public isLoggedIn(): boolean {
+    return (localStorage.getItem('isLoggedIn') == 'true');
+  }
 
 /*  --------------------CRUD ITEMS -------------------------------  */  
   getItems(): Observable<Array<ToDoItem>> {

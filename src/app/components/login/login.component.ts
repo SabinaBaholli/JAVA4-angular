@@ -25,8 +25,9 @@ export class LoginComponent implements OnInit, OnDestroy {
     const user = param.form.value;
     // check if user exists in db
     this.beService.getUsers().subscribe((users) => {
-      this.beService.isLoggedIn = !!users.filter((u) => u.email === user.email && u.password === user.password).length;
-      if ( this.beService.isLoggedIn) {
+      const isLoggedIn = !!users.filter((u) => u.email === user.email && u.password === user.password).length;
+      localStorage.setItem('isLoggedIn', isLoggedIn.toString());
+      if ( isLoggedIn) {
         this.router.navigate(['/home']);
       } else {
         this.errorMessage = 'Wrong credentials!'
