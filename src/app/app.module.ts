@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuardService } from './auth-guard.service';
+import {MatCardModule} from '@angular/material/card';
+import { UsersComponent } from './components/users/users.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { AuthGuardService } from './auth-guard.service';
     HomeComponent,
     LoginComponent,
     TodolistComponent,
-    TodoitemComponent
+    TodoitemComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { AuthGuardService } from './auth-guard.service';
     FormsModule,
     HttpClientModule,
     MatSidenavModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCardModule
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent]

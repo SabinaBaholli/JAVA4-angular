@@ -8,3 +8,12 @@ li {
     border-radius: 5px;
     box-shadow: 3px 2px grey;
 }
+
+.example-card {
+    max-width: 280px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }

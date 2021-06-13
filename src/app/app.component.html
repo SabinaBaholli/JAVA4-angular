@@ -1,5 +1,8 @@
-<button *ngIf="beService.isLoggedIn()" (click)="logOut()"> Log Out</button>
-
+<div *ngIf="beService.isLoggedIn()">
+    <button (click)="logOut()">Log Out</button>
+    <button [routerLink]="['/home']">Home</button>
+    <button [routerLink]="['/users']">Users</button>
+</div>
 <app-login *ngIf="!beService.isLoggedIn()"></app-login>
 
 <router-outlet></router-outlet>
