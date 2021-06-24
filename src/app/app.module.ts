@@ -16,6 +16,7 @@ import {MatCardModule} from '@angular/material/card';
 import { UsersComponent } from './components/users/users.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
+import { AddUserDialogComponent } from './components/users/add-user-dialog/add-user-dialog.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     LoginComponent,
     TodolistComponent,
     TodoitemComponent,
-    UsersComponent
+    UsersComponent,
+    AddUserDialogComponent
   ],
   imports: [
     BrowserModule,

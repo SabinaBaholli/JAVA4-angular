@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { UserModel } from 'src/app/models/User.model';
 import { BackendService } from 'src/app/services/backend.service';
 import {MatDialog} from '@angular/material/dialog';
+import { AddUserDialogComponent } from './add-user-dialog/add-user-dialog.component';
 
 const ELEMENT_DATA: UserModel[] = [];
 
@@ -14,7 +15,7 @@ export class UsersComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'name', 'email', 'age'];
   dataSource = ELEMENT_DATA;
-
+  name: string = 'test';
   constructor(
     private beService: BackendService,
     public dialog: MatDialog
@@ -26,19 +27,16 @@ export class UsersComponent implements OnInit {
     })  
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(DialogContentExampleDialog);
+  addUser() {
+    const dialogRef = this.dialog.open(AddUserDialogComponent, {
+      data: {name: this.name}
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
+      //todo add user
     });
   }
 
 }
 
-
-@Component({
-  selector: 'dialog-content-example-dialog',
-  templateUrl: 'add-user.html',
-})
-export class DialogContentExampleDialog {}

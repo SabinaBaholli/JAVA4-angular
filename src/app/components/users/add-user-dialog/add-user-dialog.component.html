@@ -1,0 +1,19 @@
+<h1> Add User</h1>
+
+<form #f="ngForm" (ngSubmit)="onClick(f)">
+    <label for="name">Name</label>
+    <input placeholder="Name" type="text" ngModel name="name" required>
+    <br/>
+    <label for="age">Age</label>
+    <input placeholder="Age" type="number" ngModel name="age" required>
+    <br/>
+    <label for="email">E-mail</label>
+    <input placeholder="E-mail" type="email" ngModel name="email" required>
+    <br/>
+    <label for="password">Password</label>
+    <input placeholder="Password" type="password" ngModel name="password" required>
+    <br/>
+    
+    <button class="styled-button" type="submit">Add User</button>
+</form>
+
