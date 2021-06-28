@@ -3,6 +3,7 @@ import { UserModel } from 'src/app/models/User.model';
 import { BackendService } from 'src/app/services/backend.service';
 import {MatDialog} from '@angular/material/dialog';
 import { AddUserDialogComponent } from './add-user-dialog/add-user-dialog.component';
+import { UserService } from 'src/app/services/user.service';
 
 const ELEMENT_DATA: UserModel[] = [];
 
@@ -18,6 +19,7 @@ export class UsersComponent implements OnInit {
   name: string = 'test';
   constructor(
     private beService: BackendService,
+    private userService: UserService,
     public dialog: MatDialog
     ) { }
 
@@ -35,6 +37,8 @@ export class UsersComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
       //todo add user
+      const user = result.data.user.form.value;
+      this.userService.addUser(user)
     });
   }
 

@@ -1,0 +1,9 @@
+<div class="user-profile">
+    <h1>Hello {{user.name}}</h1>
+    <p>Age: {{user.age}}</p>
+    <p>E-mail: {{user.email}}</p>
+    <div>
+        <input class="pass-input" [(ngModel)]="newPassword" type="password">
+        <button class="styled-button" (click)="changePassword()">Change Password</button>
+    </div>
+   </div>

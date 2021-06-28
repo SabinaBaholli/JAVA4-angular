@@ -1,0 +1,11 @@
+.pass-input {
+    width: 100px;
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25%;
+    margin: auto;
+}

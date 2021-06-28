@@ -1,9 +1,10 @@
 <div class="navbar" *ngIf="beService.isLoggedIn()">
     <a [routerLink]="['/home']">Home</a>
     <a [routerLink]="['/users']">Users</a>
+    <a [routerLink]="['/profile']">Profile</a>
     <a (click)="logOut()">Log Out</a>
 </div>
-<app-login *ngIf="!beService.isLoggedIn()"></app-login>
+<app-login *ngIf="!beService.isLoggedIn() && !hasSignUpUrl()"></app-login>
 
 <router-outlet></router-outlet>
   

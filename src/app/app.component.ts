@@ -11,12 +11,19 @@ export class AppComponent {
   title = 'demo';
   showFiller = false;
 
-  constructor(public beService: BackendService,
-    private router: Router) { 
+  constructor(
+    public beService: BackendService,
+    private router: Router
+    ) { 
+  }
+
+  hasSignUpUrl() {
+    return location.pathname === '/signup';
   }
 
   logOut() {
     localStorage.setItem('isLoggedIn', 'false');
+    localStorage.removeItem('user');
     this.router.navigate(['/']);
   }
 }

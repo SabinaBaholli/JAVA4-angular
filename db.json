@@ -23,8 +23,29 @@
       "id": 2,
       "name": "Guest User",
       "email": "guest@test.com",
-      "password": "123",
+      "password": "1234",
       "age": 1
+    },
+    {
+      "name": "Test",
+      "age": 3,
+      "email": "admin1@test.com",
+      "password": "123",
+      "id": 3
+    },
+    {
+      "name": "User",
+      "age": 22,
+      "email": "admin3@test.com",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "name": "User2",
+      "age": 22,
+      "email": "admin3@test.com",
+      "password": "123",
+      "id": 5
     }
   ]
 }
